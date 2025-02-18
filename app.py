@@ -1,15 +1,12 @@
 from flask import Flask, render_template, request
 
-import jsonify
-import requests
 import pickle
 import numpy as np
-import sklearn
-import matplotlib
 from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
-model = pickle.load(open(r'C:\Users\saiTeja\Downloads\Customer_Churn-Deployment-master\Customer_Churn-Deployment-master\Customer_Churn_Prediction.pkl', 'rb'))
+# model = pickle.load(open(r'C:\Users\saiTeja\Downloads\Customer_Churn-Deployment-master\Customer_Churn-Deployment-master\Customer_Churn_Prediction.pkl', 'rb'))
+model = pickle.load(open('Customer_Churn_Prediction.pkl', 'rb'))
 
 
 @app.route('/', methods=['GET'])
